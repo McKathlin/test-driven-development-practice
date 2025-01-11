@@ -1,3 +1,3 @@
 export default function capitalize(str) {
-  return str; // TODO: implement
+  return str[0].toUpperCase() + str.slice(1);
 }
