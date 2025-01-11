@@ -7,7 +7,7 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
