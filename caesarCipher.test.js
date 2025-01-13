@@ -16,6 +16,10 @@ test('preserves spaces and punctuation', () => {
   expect(caesarCipher('Calm down, son.', 8)).toBe('Kitu lwev, awv.');
 });
 
+test('preserves digits', () => {
+  expect(caesarCipher('99 problems', 3)).toBe('99 sureohpv');
+});
+
 test('handles negative shifts', () => {
   expect(caesarCipher('giraffe', -1)).toBe('fhqzeed');
 });
