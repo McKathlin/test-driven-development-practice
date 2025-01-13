@@ -71,7 +71,34 @@ test('divides floating point numbers', () => {
 test('gets infinite result when dividing by zero', () => {
   expect(Number.isFinite(calculator.divide(28, 0))).toBe(false);
   expect(Number.isFinite(calculator.divide(-0.3, 0))).toBe(false);
-})
+});
 
 // Multiply tests
 
+test('multiplies positive integers', () => {
+  expect(calculator.multiply(1, 31)).toBe(31);
+  expect(calculator.multiply(3, 6)).toBe(18);
+  expect(calculator.multiply(3243, 1000)).toBe(3243000);
+  expect(calculator.multiply(7, 111)).toBe(777);
+});
+
+test('multiplies negative integers', () => {
+  expect(calculator.multiply(-1, 3)).toBe(-3);
+  expect(calculator.multiply(50, -20)).toBe(-1000);
+  expect(calculator.multiply(-3, -6)).toBe(18);
+});
+
+test('multiplies by zero and gets zero', () => {
+  expect(calculator.multiply(0, 0)).toBeCloseTo(0);
+  expect(calculator.multiply(3243, 0)).toBeCloseTo(0);
+  expect(calculator.multiply(0, -1)).toBeCloseTo(0);
+  expect(calculator.multiply(0, 8.8)).toBeCloseTo(0);
+});
+
+test('multiplies floating point numbers', () => {
+  expect(calculator.multiply(0.4, 0.5)).toBeCloseTo(0.2);
+  expect(calculator.multiply(3.5, 100)).toBeCloseTo(350);
+  expect(calculator.multiply(3.3333333, 3)).toBeCloseTo(10);
+  expect(calculator.multiply(20, -0.75)).toBeCloseTo(-15);
+  expect(calculator.multiply(-2.345, -1)).toBeCloseTo(2.345);
+});
