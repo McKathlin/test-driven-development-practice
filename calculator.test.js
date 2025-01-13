@@ -68,9 +68,16 @@ test('divides floating point numbers', () => {
   expect(calculator.divide(20, 0.8)).toBeCloseTo(25);
 });
 
+test('divides zero by finite nonzero numbers and gets zero', () => {
+  expect(calculator.divide(0, 30)).toBe(0);
+  expect(calculator.divide(0, 0.4)).toBe(0);
+  expect(calculator.divide(0, -2)).toBe(0);
+});
+
 test('gets infinite result when dividing by zero', () => {
   expect(Number.isFinite(calculator.divide(28, 0))).toBe(false);
   expect(Number.isFinite(calculator.divide(-0.3, 0))).toBe(false);
+  expect(Number.isFinite(calculator.divide(0, 0))).toBe(false);
 });
 
 // Multiply tests

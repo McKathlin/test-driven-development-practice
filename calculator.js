@@ -7,6 +7,9 @@ function subtract(a, b) {
 }
 
 function divide(a, b) {
+  if (a == 0 && b != 0 && Number.isFinite(b)) {
+    return 0;
+  }
   return a / b;
 }
 
