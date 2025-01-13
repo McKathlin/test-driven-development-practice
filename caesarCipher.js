@@ -16,15 +16,27 @@ export default function caesarCipher(text, shift) {
 
 function _encipherChar(originalChar, shift) {
   let code = originalChar.charCodeAt(0);
-  let firstCode, lastCode;
+  let codeForA;
   if (code >= FIRST_UPPERCASE_CODE && code <= LAST_UPPERCASE_CODE) {
     // It's uppercase.
-    return String.fromCharCode(code + shift);
+    codeForA = FIRST_UPPERCASE_CODE;
   } else if (code >= FIRST_LOWERCASE_CODE && code <= LAST_LOWERCASE_CODE) {
     // It's lowercase.
-    return String.fromCharCode(code + shift);
+    codeForA = FIRST_LOWERCASE_CODE;
   } else {
     // It's not a letter. Don't change non-letters.
     return originalChar;
   }
+
+  // If we're here, it's a letter. Shift it.
+  const diffWithA = code - codeForA;
+  let shiftedDiff = (diffWithA + shift) % LETTER_COUNT;
+
+  // Cycle the shift within the allowed space for letters.
+  if (shiftedDiff < 0) {
+    shiftedDiff += LETTER_COUNT;
+  } else if (shiftedDiff >= LETTER_COUNT) {
+    shiftedDiff -= LETTER_COUNT;
+  }
+  return String.fromCharCode(codeForA + shiftedDiff);
 }
