@@ -56,6 +56,22 @@ test('subtracts floating point numbers', () => {
 
 // Divide tests
 
+test('divides integers', () => {
+  expect(calculator.divide(9, 3)).toBe(3);
+  expect(calculator.divide(100, 4)).toBe(25);
+  expect(calculator.divide(42, -2)).toBe(-21);
+});
 
+test('divides floating point numbers', () => {
+  expect(calculator.divide(100, 3)).toBeCloseTo(33.333333, 5);
+  expect(calculator.divide(2.2, 2)).toBeCloseTo(1.1);
+  expect(calculator.divide(20, 0.8)).toBeCloseTo(25);
+});
+
+test('gets infinite result when dividing by zero', () => {
+  expect(Number.isFinite(calculator.divide(28, 0))).toBe(false);
+  expect(Number.isFinite(calculator.divide(-0.3, 0))).toBe(false);
+})
 
 // Multiply tests
+
