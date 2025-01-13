@@ -89,10 +89,10 @@ test('multiplies negative integers', () => {
 });
 
 test('multiplies by zero and gets zero', () => {
-  expect(calculator.multiply(0, 0)).toBeCloseTo(0);
-  expect(calculator.multiply(3243, 0)).toBeCloseTo(0);
-  expect(calculator.multiply(0, -1)).toBeCloseTo(0);
-  expect(calculator.multiply(0, 8.8)).toBeCloseTo(0);
+  expect(calculator.multiply(0, 0)).toBe(0);
+  expect(calculator.multiply(3243, 0)).toBe(0);
+  expect(calculator.multiply(0, -1)).toBe(0);
+  expect(calculator.multiply(0, 8.8)).toBe(0);
 });
 
 test('multiplies floating point numbers', () => {
