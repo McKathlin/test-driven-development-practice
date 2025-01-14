@@ -1,3 +1,21 @@
 import analyzeArray from './analyzeArray.js';
 
-// TODO: add tests here
+test('Uses nulls when analyzing empty array', () => {
+  // TODO
+});
+
+test('Correctly analyzes single element array', () => {
+  // TODO
+});
+
+test('Analyzes typical array of positive integers', () => {
+  // TODO
+});
+
+test('Correctly handles negative elements', () => {
+  // TODO
+});
+
+test('Correctly handles floating-point elements', () => {
+  // TODO
+});
